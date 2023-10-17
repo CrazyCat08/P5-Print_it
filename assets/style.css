@@ -121,7 +121,7 @@ header {
 	object-fit: cover;
 	object-position: center;
 }
-/* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
+/* Code CSS en prévision de l'ajout d'un carrousel pour la bannière */
 /* Gestion des fleches du carrousel */
 #banner .arrow {
 	position: absolute;
