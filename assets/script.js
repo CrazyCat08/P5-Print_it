@@ -61,25 +61,23 @@ function updateDot(position) {
 
 function updateSlide(position) {
 	let CurrentSlide = slides[position];
-	console.log("position actuelle de la slide : ", CurrentSlide);
+	console.log("Slide en cours : ", CurrentSlide);
 	
 	let bannerImg = document.querySelector(".banner-img");
 	
-	let imgPath = './assets/images/slideshow/' + CurrentSlide.image;
-	console.log(imgPath);
+	let imgPath = "./assets/images/slideshow/" + CurrentSlide.image;
+	console.log("imgPath: ", imgPath);
 	
 	let imgTagLine = CurrentSlide.tagLine;
 	console.log("La tag line est: ", imgTagLine);
 	
 	bannerImg.src = imgPath;
-	console.log("path de l'image: ", bannerImg.src);
+	console.log("src de l'image: ", bannerImg.src);
 	
-	bannerImg.alt='Slide no. ' + (position + 1);
+	bannerImg.alt="Slide no. " + (position + 1);
 	console.log("alt de l'image: ", bannerImg.alt);
 	
 	let bannerImgTitle = document.querySelector("#banner p");
-	console.log("Titre de l' image de la bannière", bannerImgTitle);
-	
 	bannerImgTitle.innerHTML = imgTagLine;
 	console.log("Contenu HTML du paragraphe de la bannière: ", bannerImgTitle.innerHTML);
 }
