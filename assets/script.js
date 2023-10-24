@@ -22,6 +22,7 @@ console.log("nombre de slides: ", numberOfSlides)
 
 carrousel();
 
+
 function createDots() {
 	// Récupération de la div de classe .dots
 	const rowOfDots = document.querySelector(".dots")
@@ -43,6 +44,7 @@ function createDots() {
 }
 
 function updateDot(position) {
+	// Récupération de tous les bullet points de classe .dot
 	const listOfPoints = document.querySelectorAll(".dot");
 	
 	for (let index = 0; index< listOfPoints.length; index++) {
@@ -60,23 +62,31 @@ function updateDot(position) {
 }
 
 function updateSlide(position) {
+
+	// Récupération de la slide en cours
 	let CurrentSlide = slides[position];
 	console.log("Slide en cours : ", CurrentSlide);
-	
+
+	// Récuparation de la balise <img> de classe .banner-img (image de la bannière)
 	let bannerImg = document.querySelector(".banner-img");
 	
+	// Récuparation du chemin de l'image de la slide en cours
 	let imgPath = "./assets/images/slideshow/" + CurrentSlide.image;
 	console.log("imgPath: ", imgPath);
-	
+
+	//Récupération de la tag line de la slide en cours
 	let imgTagLine = CurrentSlide.tagLine;
 	console.log("La tag line est: ", imgTagLine);
 	
+	// L'attribut src de l'image prend la valeur imgPath
 	bannerImg.src = imgPath;
 	console.log("src de l'image: ", bannerImg.src);
 	
+	// L'attribut alt de l'image prend la valeur "Slide no. (position+1)"
 	bannerImg.alt="Slide no. " + (position + 1);
 	console.log("alt de l'image: ", bannerImg.alt);
 	
+	// Récupération du paragraphe de la bannière
 	let bannerImgTitle = document.querySelector("#banner p");
 	bannerImgTitle.innerHTML = imgTagLine;
 	console.log("Contenu HTML du paragraphe de la bannière: ", bannerImgTitle.innerHTML);
@@ -87,8 +97,12 @@ function carrousel() {
 	// Création des bullet points
 	createDots();
 
+	// Récupération de la balise de classe .arrow_left
 	let arrowLeft = document.querySelector(".arrow_left");
+	
+	// Récupération de la balise de classe .arrow_right
 	let arrowRight = document.querySelector(".arrow_right");
+
 	let i = 0;
 	
 	arrowRight.addEventListener("click", () => {
